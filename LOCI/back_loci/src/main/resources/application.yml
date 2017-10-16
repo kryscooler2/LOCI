@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}/${DB_NAME:appSubway}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:}
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+
+security:
+  basic:
+    enabled: false
+server:
+  port: ${SERVER_PORT:8081}
+
+spring.http.multipart.max-file-size: ${UPLOAD_MAX_SIZE:10MB}
+spring.http.multipart.max-request-size: ${UPLOAD_MAX_SIZE:10MB}
