@@ -52,6 +52,11 @@ public class StationAndSubwayController {
 		return networkService.getAllSubways(tab, isWeightedGraph);
 	}
 	
+	@GetMapping("/stationsNames")
+	public ArrayList<String> getStationsNames() throws IOException {
+		return networkService.getAllStationsName(tab, isWeightedGraph);
+	}
+	
 	
 	
 }

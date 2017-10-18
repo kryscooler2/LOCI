@@ -58,6 +58,17 @@ public class NetworkService {
 		return subways;
 	}
 	
+	public ArrayList<String> getAllStationsName(String  tab[], boolean isWeighted) throws IOException {
+		createAllTheNetwork(tab, isWeighted);
+		ArrayList<String> stationsNames = new ArrayList<String>();
+		for(Station s : getListStations()) {
+			if(!stationsNames.contains(s.getName())) {
+				stationsNames.add(s.getName());
+			}
+		}
+		return stationsNames;
+	}
+	
 	/**
 	 * Create All Stations.
 	 * @param tab

@@ -1,0 +1,39 @@
+2017-10-18 13:42:34,018 [Worker-2] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.loci:loci:0.0.1-SNAPSHOT @ D:\4 - Projets\REPO\ApplicationMobile\LOCI\LOCI\back_loci\pom.xml.
+2017-10-18 13:42:45,706 [Worker-6] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.loci:loci:0.0.1-SNAPSHOT @ D:\4 - Projets\REPO\ApplicationMobile\LOCI\LOCI\back_loci\pom.xml.
+2017-10-18 13:42:46,019 [Worker-2] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /back_loci/src/main/java
+2017-10-18 13:42:46,019 [Worker-2] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /back_loci/src/main/resources
+2017-10-18 13:42:46,019 [Worker-2] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /back_loci/src/main/resources
+2017-10-18 13:42:46,019 [Worker-2] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /back_loci/src/test/java
+2017-10-18 13:42:47,003 [Worker-2] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 37 sec
+2017-10-18 13:42:50,300 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.loci:loci:0.0.1-SNAPSHOT @ D:\4 - Projets\REPO\ApplicationMobile\LOCI\LOCI\back_loci\pom.xml.
+2017-10-18 13:42:55,129 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-10-18 13:42:55,160 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-18 13:42:55,222 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-18 13:42:55,222 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-10-18 13:42:55,222 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\4 - Projets\REPO\ApplicationMobile\LOCI\LOCI\back_loci\src\test\resources
+2017-10-18 13:42:57,441 [Worker-6] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.loci:loci:0.0.1-SNAPSHOT @ D:\4 - Projets\REPO\ApplicationMobile\LOCI\LOCI\back_loci\pom.xml.
+2017-10-18 13:43:07,489 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-10-18 13:43:07,504 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-18 13:43:07,504 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-18 13:43:07,504 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-10-18 13:43:07,504 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\4 - Projets\REPO\ApplicationMobile\LOCI\LOCI\back_loci\src\test\resources
+2017-10-18 13:52:37,177 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-10-18 13:52:37,183 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-18 13:52:37,195 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-18 13:52:37,210 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-10-18 13:52:37,210 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\4 - Projets\REPO\ApplicationMobile\LOCI\LOCI\back_loci\src\test\resources
+2017-10-18 14:44:05,490 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-10-18 14:44:05,568 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-18 14:44:05,592 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-18 14:44:05,605 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-10-18 14:44:05,605 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\4 - Projets\REPO\ApplicationMobile\LOCI\LOCI\back_loci\src\test\resources
+2017-10-18 14:52:33,797 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-10-18 14:52:33,798 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-18 14:52:33,802 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-18 14:52:33,885 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-10-18 14:52:33,885 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\4 - Projets\REPO\ApplicationMobile\LOCI\LOCI\back_loci\src\test\resources
+2017-10-18 14:54:14,358 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-10-18 14:54:14,359 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-18 14:54:14,364 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-18 14:54:14,366 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-10-18 14:54:14,367 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\4 - Projets\REPO\ApplicationMobile\LOCI\LOCI\back_loci\src\test\resources
