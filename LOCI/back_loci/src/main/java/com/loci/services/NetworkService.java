@@ -43,23 +43,19 @@ public class NetworkService {
 		addNeighborsToStations();
 	}
 	
-	public List<Station> getAllStations(String  tab[], boolean isWeighted) throws IOException {
-		createAllTheNetwork(tab, isWeighted);
+	public List<Station> getAllStations() throws IOException {
 		return getListStations();
 	}
 	
-	public List<Edge> getAllEdges(String  tab[], boolean isWeighted) throws IOException {
-		createAllTheNetwork(tab, isWeighted);
+	public List<Edge> getAllEdges() throws IOException {
 		return getEdges();
 	}
 	
-	public ArrayList<Subway> getAllSubways(String  tab[], boolean isWeighted) throws IOException {
-		createAllTheNetwork(tab, isWeighted);
+	public ArrayList<Subway> getAllSubways() throws IOException {
 		return subways;
 	}
 	
-	public ArrayList<String> getAllStationsName(String  tab[], boolean isWeighted) throws IOException {
-		createAllTheNetwork(tab, isWeighted);
+	public ArrayList<String> getAllStationsName() throws IOException {
 		ArrayList<String> stationsNames = new ArrayList<String>();
 		for(Station s : getListStations()) {
 			if(!stationsNames.contains(s.getName())) {

@@ -26,35 +26,30 @@ public class StationAndSubwayController {
 	@Autowired
 	private Dijkstra djDijkstra;
 	
-	Boolean isWeightedGraph = true;
-	
-	
-	public final static String  tab[] = {"1","2","3","4","5","6","7","8","9","10","11","12","13","14","3b","7b"};
 	
 	@GetMapping("/stations")
 	public List<Station> getStations() throws IOException {
-		return networkService.getAllStations(tab, isWeightedGraph);
+		return networkService.getAllStations();
 	}
 	
 	@GetMapping("/liens")
 	public List<Edge> getEdges() throws IOException {
-		return networkService.getAllEdges(tab, isWeightedGraph);
+		return networkService.getAllEdges();
 	}
 	
 	@GetMapping("/SP/{from}/{to}")
 	public List<Station> getSPBetweenToStations(@PathVariable String from, @PathVariable String to) throws IOException {
-		networkService.createAllTheNetwork(tab, isWeightedGraph);
 		return djDijkstra.getSPBetweenToStations(from, to);
 	}
 	
 	@GetMapping("/lines")
 	public ArrayList<Subway> getSubways() throws IOException {
-		return networkService.getAllSubways(tab, isWeightedGraph);
+		return networkService.getAllSubways();
 	}
 	
 	@GetMapping("/stationsNames")
 	public ArrayList<String> getStationsNames() throws IOException {
-		return networkService.getAllStationsName(tab, isWeightedGraph);
+		return networkService.getAllStationsName();
 	}
 	
 	
