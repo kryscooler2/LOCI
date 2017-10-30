@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Loci</string>
+    <string-array name="result_station">
+        <item>Cité universitaire</item>
+        <item>Denfert rochereaut</item>
+        <item>Port Royal</item>
+        <item>Luxembourg</item>
+        <item>Saint Michel</item>
+        <item>Chatêlet les halles</item>
+    </string-array>>
 </resources>

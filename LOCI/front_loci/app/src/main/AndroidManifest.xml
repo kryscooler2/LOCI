@@ -11,12 +11,25 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainMenu">
             <intent-filter>
+                <!--action.MAIN pour indiquer, ici, c'est le point d'entrée dans l'applications.-->
                 <action android:name="android.intent.action.MAIN" />
-
+                <!--category.LAUNCHER pour indiquer, c'est ce composant, qui doit s'afficher dans la lanceur d'application.-->
                 <category android:name="android.intent.category.LAUNCHER" />
+
             </intent-filter>
         </activity>
-        <activity android:name= ".Search"></activity>
+
+        <activity android:name=".Search">
+
+        </activity>
+
+        <activity android:name=".MapResult">
+
+        </activity>
+
+        <activity android:name=".MetroLineDetail">
+
+        </activity>
     </application>
 
 </manifest>
