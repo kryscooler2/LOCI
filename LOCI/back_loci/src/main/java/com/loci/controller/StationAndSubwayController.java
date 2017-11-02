@@ -24,7 +24,7 @@ public class StationAndSubwayController {
 	private NetworkService networkService;
 	
 	@Autowired
-	private Dijkstra djDijkstra;
+	private Dijkstra dijkstra;
 	
 	
 	@GetMapping("/stations")
@@ -32,19 +32,24 @@ public class StationAndSubwayController {
 		return networkService.getAllStations();
 	}
 	
-	@GetMapping("/liens")
+	@GetMapping("/edges")
 	public List<Edge> getEdges() throws IOException {
 		return networkService.getAllEdges();
 	}
 	
 	@GetMapping("/SP/{from}/{to}")
 	public List<Station> getSPBetweenToStations(@PathVariable String from, @PathVariable String to) throws IOException {
-		return djDijkstra.getSPBetweenToStations(from, to);
+		return dijkstra.getSPBetweenToStations(from, to);
 	}
 	
 	@GetMapping("/lines")
 	public ArrayList<Subway> getSubways() throws IOException {
 		return networkService.getAllSubways();
+	}
+	
+	@GetMapping("/lines/{subwayName}")
+	public Subway getSubwayByName(@PathVariable String subwayName) throws IOException {
+		return networkService.getSubwayByName(subwayName);
 	}
 	
 	@GetMapping("/stationsNames")

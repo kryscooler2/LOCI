@@ -65,6 +65,18 @@ public class NetworkService {
 		return stationsNames;
 	}
 	
+	public Subway getSubwayByName(String name) {
+		Subway sub = null;
+		List<Subway> allLines = getListSubways();
+		for(Subway s : allLines) {
+			String name2 = s.getName();
+			if(name2.equals(name)) {
+				sub = s;
+			}
+		}
+		return sub;
+	}
+	
 	/**
 	 * Create All Stations.
 	 * @param tab
@@ -256,7 +268,7 @@ public class NetworkService {
 	}
 	
 	/**
-	 * getStopByName()
+	 * getStationByName()
 	 * @param name
 	 * @return
 	 */
