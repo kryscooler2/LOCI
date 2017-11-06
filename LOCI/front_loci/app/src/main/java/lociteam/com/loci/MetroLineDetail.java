@@ -3,13 +3,14 @@ package lociteam.com.loci;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 /**
  * Created by linfengwang on 26/10/2017.
  */
 
-public class MetroLineDetail extends Activity{
+public class MetroLineDetail extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);

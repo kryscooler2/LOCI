@@ -1,25 +1,23 @@
 package lociteam.com.loci;
 
-import android.app.Activity;
-import android.app.ListActivity;
+import java.util.Arrays;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemClickListener;
-
-import java.lang.reflect.Array;
 import java.util.List;
+
 
 /**
  * Created by linfengwang on 25/10/2017.
  */
 
-public class MapResult extends Activity {
+public class MapResult extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -38,21 +36,21 @@ public class MapResult extends Activity {
         arrivalStation.setText(arrival);
 
         //créez une liste pour afficher les réusltats, pour l'instant, codage dur;
-/*
+
         String [] station_map = getResources().getStringArray(R.array.result_station);
-        List<String> stationList= Array.asList(station_map);
+        List<String> stationList= Arrays.asList(station_map);
 
         ListView listView = (ListView) findViewById(R.id.station_list);
-        ArrayAdapter<String> adapter=new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, stationList);
+        ArrayAdapter<String> adapter=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, stationList);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view,int i,long l){
-
+                
             }
         });
-*/
+
         //how to switch between activities in android->btnColse
         Button btnBack =(Button)findViewById(R.id.back);
         btnBack.setOnClickListener(new View.OnClickListener(){
