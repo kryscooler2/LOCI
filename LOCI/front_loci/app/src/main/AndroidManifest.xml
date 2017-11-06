@@ -22,14 +22,10 @@
         <activity android:name=".Search">
 
         </activity>
-
         <activity android:name=".MapResult">
 
         </activity>
 
-        <activity android:name=".MetroLineDetail">
-
-        </activity>
     </application>
 
 </manifest>
