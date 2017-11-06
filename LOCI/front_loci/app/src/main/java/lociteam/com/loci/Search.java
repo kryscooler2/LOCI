@@ -30,6 +30,18 @@ public class Search extends AppCompatActivity {
 
         searchButton=(Button)findViewById(R.id.search);
 
+        //test call LOCI service;
+        btnCall = (Button) findViewById(R.id.btncall);
+        btnCall.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                //call the service ;
+                Uri  telephone=Uri.parse("tel:0626970787");
+                Intent secondIntent = new Intent(Intent.ACTION_DIAL,telephone);
+                startActivity(secondIntent);
+            }
+        });
+
         //on rajoute un listener sur le clic du boutton search
         searchButton.setOnClickListener( new View.OnClickListener(){
             @Override
@@ -42,23 +54,12 @@ public class Search extends AppCompatActivity {
                 toast.show();
 
                 //change pour l'activité MapResult;
-                Intent ResultScreen= new Intent(Search.this, MapResult.class);
+                Intent ResultScreen= new Intent(context, MapResult.class);
                 //envoyez les donnes à deuxième activité.
                 ResultScreen.putExtra("departure",departureStation.getText().toString());
                 ResultScreen.putExtra("arrival",arrivalStation.getText().toString());
-                startActivity(ResultScreen);
-            }
-        });
 
-        //test call LOCI service;
-        btnCall = (Button) findViewById(R.id.btncall);
-        btnCall.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                //call the service ;
-                Uri  telephone=Uri.parse("tel:0626970787");
-                Intent secondIntent = new Intent(Intent.ACTION_DIAL,telephone);
-                startActivity(secondIntent);
+                startActivity(ResultScreen);
             }
         });
      }

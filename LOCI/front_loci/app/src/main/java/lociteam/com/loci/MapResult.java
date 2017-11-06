@@ -1,5 +1,6 @@
 package lociteam.com.loci;
 
+import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,7 +19,7 @@ import java.util.List;
  * Created by linfengwang on 25/10/2017.
  */
 
-public class MapResult extends ListActivity {
+public class MapResult extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -37,8 +38,8 @@ public class MapResult extends ListActivity {
         arrivalStation.setText(arrival);
 
         //créez une liste pour afficher les réusltats, pour l'instant, codage dur;
-
-        /*String [] station_map = getResources().getStringArray(R.array.result_station);
+/*
+        String [] station_map = getResources().getStringArray(R.array.result_station);
         List<String> stationList= Array.asList(station_map);
 
         ListView listView = (ListView) findViewById(R.id.station_list);
@@ -51,7 +52,7 @@ public class MapResult extends ListActivity {
 
             }
         });
-
+*/
         //how to switch between activities in android->btnColse
         Button btnBack =(Button)findViewById(R.id.back);
         btnBack.setOnClickListener(new View.OnClickListener(){
@@ -60,7 +61,6 @@ public class MapResult extends ListActivity {
                 finish();
             }
         });
-        */
 
     }
 }
