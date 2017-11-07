@@ -6,6 +6,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -14,18 +16,33 @@ import android.widget.Toast;
 public class Search extends AppCompatActivity {
 
     private Button searchButton = null;
-    private EditText departureStation= null;
-    private EditText arrivalStation =null;
+    private AutoCompleteTextView departureStation= null;
+    private AutoCompleteTextView arrivalStation =null;
         //test to call service;
     private Button btnCall=null;
+
+
+    // Notre liste de mots que connaîtra l'AutoCompleteTextView
+    private static final String[] stations = new String[] {
+            "Chatelet", "nation", "Cité universitaire", "Saint michel", "gare du nord", "bagneux"
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        departureStation=(EditText)findViewById(R.id.departure);
-        arrivalStation=(EditText)findViewById(R.id.arrival);
+        departureStation=(AutoCompleteTextView)findViewById(R.id.departure);
+        departureStation.setThreshold(2);
+
+        arrivalStation=(AutoCompleteTextView)findViewById(R.id.arrival);
+        arrivalStation.setThreshold(2);
+
+        // On associe un adaptateur à notre liste de couleurs…
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, stations);
+        // puis on indique que notre AutoCompleteTextView utilise cet adaptateur
+        departureStation.setAdapter(adapter);
+        arrivalStation.setAdapter(adapter);
 
         searchButton=(Button)findViewById(R.id.search);
 
