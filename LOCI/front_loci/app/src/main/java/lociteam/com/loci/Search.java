@@ -20,6 +20,7 @@ public class Search extends AppCompatActivity {
     private AutoCompleteTextView arrivalStation =null;
         //test to call service;
     private Button btnCall=null;
+    private Button btnGMap=null;
 
 
     // Notre liste de mots que connaîtra l'AutoCompleteTextView
@@ -59,7 +60,7 @@ public class Search extends AppCompatActivity {
         });
 
         //on rajoute un listener sur le clic du boutton search
-        searchButton.setOnClickListener( new View.OnClickListener(){
+        searchButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View viewResult){
                 //dès que l'on clique le boutton, il va s'afficher le text="le boutton d'envoyer est déclenché.";
@@ -76,6 +77,15 @@ public class Search extends AppCompatActivity {
                 ResultScreen.putExtra("arrival",arrivalStation.getText().toString());
 
                 startActivity(ResultScreen);
+            }
+        });
+        //test Google maps
+        btnGMap=(Button)findViewById(R.id.btnGoogleMap);
+        btnGMap.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View viewGoogle){
+                Intent googleMapScreen=new Intent(getApplicationContext(),MapsActivity.class);
+                startActivity(googleMapScreen);
             }
         });
      }
