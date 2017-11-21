@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".MainMenu">
             <intent-filter>
                 <!--action.MAIN pour indiquer, ici, c'est le point d'entrée dans l'applications.-->
@@ -29,5 +30,4 @@
     </application>
 
 </manifest>
-
 

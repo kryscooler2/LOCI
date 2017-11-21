@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Loci</string>
+    <string name="button_home">Go home</string>
+    <string name="button_work">To Work</string>
     <string-array name="result_station">
         <item>Cité universitaire</item>
         <item>Denfert rochereaut</item>
