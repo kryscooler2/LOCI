@@ -14,34 +14,51 @@ import android.view.MenuItem;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.ArrayList;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import lociteam.com.Factory.ResponseFactory;
+import lociteam.com.Model.ResponseToRequest;
 
 
 public class MapResult extends AppCompatActivity  {
+
+        private List<String> stations = new ArrayList<>();
+        private final String TYPES_OF_RESOURCE_EXTRA = "TYPES_OF_RESOURCE";
+        private final String RESPONSE_EXTRA = "RESPONSE";
+
         @Override
         public void onCreate(Bundle savedInstanceState){
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_result);
-                TextView deptStation=(TextView)findViewById(R.id.departureStation);
-                TextView arrivalStation=(TextView)findViewById(R.id.arrivalStation);
+               // TextView deptStation=(TextView)findViewById(R.id.departureStation);
+                //TextView arrivalStation=(TextView)findViewById(R.id.arrivalStation);
 
                 //récupère les donnes envoyé par l'activité_search
-                Intent resultIntent=getIntent();
-                String departure=resultIntent.getStringExtra("departure");
-                String arrival=resultIntent.getStringExtra("arrival");
+                //Intent resultIntent=getIntent();
+                //String departure=resultIntent.getStringExtra("departure");
+               // String arrival=resultIntent.getStringExtra("arrival");
 
-                deptStation.setText(departure);
-                arrivalStation.setText(arrival);
+               // deptStation.setText(departure);
+                //arrivalStation.setText(arrival);
 
                 //créez une liste pour afficher les réusltats, pour l'instant, codage dur;
 
-                String [] station_map = getResources().getStringArray(R.array.result_station);
-                List<String> stationList= Arrays.asList(station_map);
+                //String [] station_map = getResources().getStringArray(R.array.result_station);
+            try {
+                getShortestPath();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
 
-                ListView listView = (ListView) findViewById(R.id.station_list);
-                ArrayAdapter<String> adapter=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, stationList);
+            ListView listView = (ListView) findViewById(R.id.station_list);
+                ArrayAdapter<String> adapter=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, stations);
                 listView.setAdapter(adapter);
 
-           listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view,int i,long l){
 
@@ -68,7 +85,7 @@ public class MapResult extends AppCompatActivity  {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.action_menu, menu);
+        //getMenuInflater().inflate(R.menu.action_menu, menu);
         return true;
     }
 
@@ -89,5 +106,40 @@ public class MapResult extends AppCompatActivity  {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    private void getShortestPath() throws JSONException {
+        Intent intent = getIntent();
+        String resourceType = intent.getStringExtra(TYPES_OF_RESOURCE_EXTRA);
+        String responseString = intent.getStringExtra(RESPONSE_EXTRA);
+
+        final ArrayList<ResponseToRequest> responseList = getResponses(responseString);
+        List<String> responseNames = getResponseName(responseList);
+        stations.addAll(responseNames);
     }
+
+    private ArrayList<ResponseToRequest> getResponses(String responseString) throws JSONException {
+        JSONArray jsonArray = new JSONArray(responseString);
+        ArrayList<ResponseToRequest> responseList = new ArrayList<>();
+        for (int i = 0; i < jsonArray.length(); i++) {
+            JSONObject jsonObject = jsonArray.getJSONObject(i);
+            ResponseToRequest response = createResponse();
+            response.initialiseWithJson(jsonObject);
+            responseList.add(response);
+        }
+        return responseList;
+    }
+
+    private ResponseToRequest createResponse() {
+        ResponseFactory responseFactory = new ResponseFactory();
+        return responseFactory.create();
+    }
+
+    private List<String> getResponseName(List<ResponseToRequest> responseList) {
+        List<String> names = new ArrayList<>();
+        for (ResponseToRequest response : responseList) {
+            names.add(response.getName());
+        }
+        return names;
+    }
+}
 
