@@ -20,26 +20,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="Your itinerary: from"
+        android:text="Your itinerary"
         android:textSize="25sp" />
 
-    <TextView
-        android:id="@+id/departureStation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:layout_gravity="center"
-        android:gravity="center"/>
-
-    <TextView
-        android:id="@+id/testDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="to->"
-        android:textSize="25sp" />
-
+    
     <TextView
         android:id="@+id/arrivalStation"
         android:layout_width="wrap_content"

@@ -7,10 +7,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
-public class Station implements Response {
+public class Station implements ResponseToRequest {
 
     private List<Long> ids;
     private String name;
