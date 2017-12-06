@@ -3,6 +3,7 @@ package lociteam.com.loci;
 import android.content.Context;
 import android.content.Intent;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -33,7 +34,6 @@ import android.support.v7.app.AlertDialog;
 
 
 public class Search extends AppCompatActivity {
-
     private final String URL_BASE = "http://172.16.232.91:8081/subway/SP/";
 
     private final String TYPES_OF_RESOURCE_EXTRA = "TYPES_OF_RESOURCE";
@@ -53,6 +53,13 @@ public class Search extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
+
+        final SharedPreferences pref = getApplicationContext().getSharedPreferences("UserPref", 0);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString("home", "");
+        editor.putString("work", "");
+        editor.commit();
 
         try {
             autoCompleteCreation();
@@ -82,6 +89,35 @@ public class Search extends AppCompatActivity {
                 Uri  telephone=Uri.parse("tel:0626970787");
                 Intent secondIntent = new Intent(Intent.ACTION_DIAL,telephone);
                 startActivity(secondIntent);
+            }
+        });
+
+        Button btnUserHome = (Button) findViewById(R.id.btnHome);
+        btnUserHome.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                if (pref.getString("home", null).toString().equals("")){
+                    Intent myIntent = new Intent(getApplicationContext(), UserData.class);
+                    myIntent.putExtra("choice", 0);
+                    myIntent.putStringArrayListExtra("stationsList", (ArrayList<String>) stations);//.putExtra(RESPONSE_EXTRA, response.toString());
+                    startActivity(myIntent);
+                }else {
+                    departureStation.setText(pref.getString("home", null));
+                }
+            }
+        });
+        Button btnUserWork = (Button) findViewById(R.id.btnWork);
+        btnUserWork.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                if (pref.getString("work", null).toString().equals("")){
+                    Intent myIntent = new Intent(getApplicationContext(), UserData.class);
+                    myIntent.putExtra("choice", 1);
+                    myIntent.putStringArrayListExtra("stationsList", (ArrayList<String>) stations);//.putExtra(RESPONSE_EXTRA, response.toString());
+                    startActivity(myIntent);
+                }else {
+                    arrivalStation.setText(pref.getString("work", null));
+                }
             }
         });
 
