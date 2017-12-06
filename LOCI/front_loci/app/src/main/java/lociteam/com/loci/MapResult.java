@@ -82,7 +82,7 @@ public class MapResult extends AppCompatActivity  {
                 String shareBodyText = "Check it out. Your message goes here";
                 sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT,"Subject here");
                 sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBodyText);
-                startActivity(Intent.createChooser(sharingIntent, "Shearing Option"));
+                startActivity(Intent.createChooser(sharingIntent, "Sharing Option"));
                 return true;
 
             default:
