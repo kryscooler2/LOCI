@@ -34,20 +34,6 @@ public class MapResult extends AppCompatActivity  {
         public void onCreate(Bundle savedInstanceState){
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_result);
-               // TextView deptStation=(TextView)findViewById(R.id.departureStation);
-                //TextView arrivalStation=(TextView)findViewById(R.id.arrivalStation);
-
-                //récupère les donnes envoyé par l'activité_search
-                //Intent resultIntent=getIntent();
-                //String departure=resultIntent.getStringExtra("departure");
-               // String arrival=resultIntent.getStringExtra("arrival");
-
-               // deptStation.setText(departure);
-                //arrivalStation.setText(arrival);
-
-                //créez une liste pour afficher les réusltats, pour l'instant, codage dur;
-
-                //String [] station_map = getResources().getStringArray(R.array.result_station);
             try {
                 getShortestPath();
             } catch (JSONException e) {

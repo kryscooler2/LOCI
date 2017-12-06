@@ -96,11 +96,18 @@ public class Search extends AppCompatActivity {
                 Toast toast=Toast.makeText(context,text,duration);
                 toast.show();
                 if(!departureStation.getText().toString().equals("") &&!arrivalStation.getText().toString().equals("")) {
-                    String url = URL_BASE + departureStation.getText().toString() + "/" + arrivalStation.getText().toString();
-                    doQuery(url);
+                    if(!departureStation.getText().toString().equals(arrivalStation.getText().toString())) {
+                        String url = URL_BASE + departureStation.getText().toString() + "/" + arrivalStation.getText().toString();
+                        doQuery(url);
+                    } else {
+                        Toast changeStationToast = Toast.makeText(context,"You have chosen the same station for the departure and the arrival.",Toast.LENGTH_LONG);
+                        changeStationToast.show();
+                    }
+
+
                 } else {
-                    Toast toastTest = Toast.makeText(context,"You Need to write two stations",Toast.LENGTH_LONG);
-                    toastTest.show();
+                    Toast addStationToast = Toast.makeText(context,"You Need to write two stations",Toast.LENGTH_LONG);
+                    addStationToast.show();
                 }
 
 
