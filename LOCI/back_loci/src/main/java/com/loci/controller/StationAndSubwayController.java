@@ -57,6 +57,11 @@ public class StationAndSubwayController {
 		return networkService.getAllStationsName();
 	}
 	
+	@GetMapping("/stations/{stationName}")
+	public Station getStationByName(@PathVariable String stationName) throws IOException {
+		return networkService.getStationByName(stationName);
+	}
+	
 	
 	
 }
