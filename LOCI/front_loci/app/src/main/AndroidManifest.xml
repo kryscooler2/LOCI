@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="lociteam.com.loci">
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <uses-feature
         android:glEsVersion="0x00020000"
-        android:required="true"/>
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -15,25 +16,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <meta-data
             android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version"/>
+            android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyANS_zt0teTfjPBBJqC8YG_89zX2ht5HN0"/>
-
+            android:value="AIzaSyANS_zt0teTfjPBBJqC8YG_89zX2ht5HN0" />
 
         <activity android:name=".MainMenu">
             <intent-filter>
-                <!--action.MAIN pour indiquer, ici, c'est le point d'entrée dans l'applications.-->
-                <action android:name="android.intent.action.MAIN" />
-                <!--category.LAUNCHER pour indiquer, c'est ce composant, qui doit s'afficher dans la lanceur d'application.-->
-                <category android:name="android.intent.category.LAUNCHER" />
 
+                <!-- action.MAIN pour indiquer, ici, c'est le point d'entrée dans l'applications. -->
+                <action android:name="android.intent.action.MAIN" />
+                <!-- category.LAUNCHER pour indiquer, c'est ce composant, qui doit s'afficher dans la lanceur d'application. -->
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps">
@@ -43,19 +41,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".Search">
-
-        </activity>
-        <activity android:name=".MapResult">
-
-        </activity>
-
-        <activity android:name=".MainMenuServerError">
-
-        </activity>
-
+        <activity android:name=".Search"></activity>
+        <activity android:name=".MapResult"></activity>
+        <activity android:name=".MainMenuServerError"></activity>
+        <activity android:name=".UserData"></activity>
     </application>
 
 </manifest>
-
