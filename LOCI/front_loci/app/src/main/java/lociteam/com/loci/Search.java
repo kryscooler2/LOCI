@@ -102,7 +102,7 @@ public class Search extends AppCompatActivity {
                     myIntent.putStringArrayListExtra("stationsList", (ArrayList<String>) stations);//.putExtra(RESPONSE_EXTRA, response.toString());
                     startActivity(myIntent);
                 }else {
-                    departureStation.setText(pref.getString("home", null));
+                    arrivalStation.setText(pref.getString("home", null));
                 }
             }
         });
