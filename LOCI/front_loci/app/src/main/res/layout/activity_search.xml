@@ -130,28 +130,6 @@
                     android:layout_weight="0.7"/>
             </LinearLayout>
 
-            <!--<Button
-                    android:id="@+id/btnHome"
-                    android:layout_width="120dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="6dp"
-                    android:background="@color/white"
-                    android:drawableLeft="@mipmap/home"
-                    android:text="@string/button_home"
-                    android:textSize="12sp" />
-
-                <Button
-                    android:id="@+id/btnWork"
-                    android:layout_width="120dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="10dp"
-                    android:background="@color/white"
-                    android:drawableLeft="@mipmap/work"
-                    android:text="@string/button_work"
-                    android:textSize="12sp" />-->
-
             <Button
                 android:id="@+id/search"
                 android:layout_width="match_parent"
@@ -163,20 +141,6 @@
                 android:text="Search"
                 android:textColor="@android:color/background_light"
                 android:textSize="18sp" />
-
-            <Button
-                android:id="@+id/btncall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
-                android:layout_weight="0.08"
-                android:background="@color/service"
-                android:fontFamily="casual"
-                android:text="Call LOCI Service."
-                android:textColor="@android:color/background_light"
-                android:textSize="18sp"
-                android:visibility="invisible" />
 
         </LinearLayout>
     </ScrollView>

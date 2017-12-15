@@ -34,7 +34,7 @@ import android.support.v7.app.AlertDialog;
 
 
 public class Search extends AppCompatActivity {
-    private final String URL_BASE = "http://172.16.232.91:8081/subway/SP/";
+    private final String URL_BASE = "http://192.168.1.12:8081/subway/SP/";    //"http://172.16.232.91:8081/subway/SP/";
 
     private final String TYPES_OF_RESOURCE_EXTRA = "TYPES_OF_RESOURCE";
     private final String RESPONSE_EXTRA = "RESPONSE";
@@ -79,18 +79,6 @@ public class Search extends AppCompatActivity {
         arrivalStation.setAdapter(adapter);
 
         searchButton=(Button)findViewById(R.id.search);
-
-        //test call LOCI service;
-        btnCall = (Button) findViewById(R.id.btncall);
-        btnCall.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                //call the service ;
-                Uri  telephone=Uri.parse("tel:0626970787");
-                Intent secondIntent = new Intent(Intent.ACTION_DIAL,telephone);
-                startActivity(secondIntent);
-            }
-        });
 
         Button btnUserHome = (Button) findViewById(R.id.btnHome);
         btnUserHome.setOnClickListener(new View.OnClickListener(){
@@ -155,8 +143,23 @@ public class Search extends AppCompatActivity {
                 toast.show();
                 if(!departureStation.getText().toString().equals("") &&!arrivalStation.getText().toString().equals("")) {
                     if(!departureStation.getText().toString().equals(arrivalStation.getText().toString())) {
-                        String url = URL_BASE + departureStation.getText().toString() + "/" + arrivalStation.getText().toString();
-                        doQuery(url);
+                        boolean departureStationFound= false;
+                        boolean arrivalStationFound= false;
+                        for (int i=0; i < stations.size(); i++){
+                            if (departureStation.getText().toString().equals(stations.get(i))){
+                                departureStationFound = true;
+                            }
+                            if (arrivalStation.getText().toString().equals(stations.get(i))){
+                                arrivalStationFound = true;
+                            }
+                        }
+                        if (departureStationFound == true && arrivalStationFound == true){
+                            String url = URL_BASE + departureStation.getText().toString() + "/" + arrivalStation.getText().toString();
+                            doQuery(url);
+                        } else{
+                            Toast changeStationToast = Toast.makeText(context,"At least one of the station written doesn't exist.",Toast.LENGTH_LONG);
+                            changeStationToast.show();
+                        }
                     } else {
                         Toast changeStationToast = Toast.makeText(context,"You have chosen the same station for the departure and the arrival.",Toast.LENGTH_LONG);
                         changeStationToast.show();
