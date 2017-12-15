@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -71,12 +72,31 @@ public class Search extends AppCompatActivity {
 
         arrivalStation=(AutoCompleteTextView)findViewById(R.id.arrival);
         arrivalStation.setThreshold(2);
+        arrivalStation.setOnKeyListener(new View.OnKeyListener() {
+            public boolean onKey(View view, int keyCode, KeyEvent keyevent) {
+                if ((keyevent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    searchButton.performClick();
+                    return true;
+                }
+                return false;
+            }
+        });
 
         // On associe un adaptateur à notre liste de couleurs…
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, stations);
         // puis on indique que notre AutoCompleteTextView utilise cet adaptateur
         departureStation.setAdapter(adapter);
         arrivalStation.setAdapter(adapter);
+
+        Button change = (Button) findViewById(R.id.change);
+        change.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                String swap = departureStation.getText().toString();
+                departureStation.setText(arrivalStation.getText().toString());
+                arrivalStation.setText(swap);
+            }
+        });
 
         searchButton=(Button)findViewById(R.id.search);
 
