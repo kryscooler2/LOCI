@@ -40,6 +40,12 @@ public class MapResult extends AppCompatActivity  {
                 e.printStackTrace();
             }
 
+
+            List<String> stationReordered = new ArrayList<>();
+            for (int i=stations.size()-1; i>=0; i-- ){
+                stationReordered.add(stations.get(i));
+            }
+            stations = stationReordered;
             ListView listView = (ListView) findViewById(R.id.station_list);
                 ArrayAdapter<String> adapter=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, stations);
                 listView.setAdapter(adapter);

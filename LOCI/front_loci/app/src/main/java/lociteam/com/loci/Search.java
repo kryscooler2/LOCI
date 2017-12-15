@@ -121,6 +121,28 @@ public class Search extends AppCompatActivity {
             }
         });
 
+        Button configHome = (Button) findViewById(R.id.configHome);
+        configHome.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent myIntent = new Intent(getApplicationContext(), UserData.class);
+                myIntent.putExtra("choice", 0);
+                myIntent.putStringArrayListExtra("stationsList", (ArrayList<String>) stations);//.putExtra(RESPONSE_EXTRA, response.toString());
+                startActivity(myIntent);
+            }
+        });
+
+        Button configWork = (Button) findViewById(R.id.configWork);
+        configWork.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent myIntent = new Intent(getApplicationContext(), UserData.class);
+                myIntent.putExtra("choice", 1);
+                myIntent.putStringArrayListExtra("stationsList", (ArrayList<String>) stations);//.putExtra(RESPONSE_EXTRA, response.toString());
+                startActivity(myIntent);
+            }
+        });
+
         //on rajoute un listener sur le clic du boutton search
         searchButton.setOnClickListener(new View.OnClickListener(){
             @Override
