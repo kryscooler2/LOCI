@@ -69,7 +69,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="0.5"
                 android:background="@android:drawable/ic_popup_sync"
-                android:textSize="12sp" />
+                android:textSize="12sp"/>
         </LinearLayout>
 
 
@@ -95,7 +95,7 @@
                     android:background="@color/white"
                     android:drawableLeft="@mipmap/home"
                     android:text="@string/button_home"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"/>
 
                 <Button
                     android:id="@+id/btnWork"
@@ -106,12 +106,12 @@
                     android:background="@color/white"
                     android:drawableLeft="@mipmap/work"
                     android:text="@string/button_work"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"/>
 
                 <Space
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.7" />
+                    android:layout_weight="0.7"/>
             </LinearLayout>
 
             <LinearLayout
@@ -134,7 +134,7 @@
                     android:layout_marginRight="10dp"
                     android:background="@android:drawable/ic_menu_manage"
                     android:textAllCaps="false"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"/>
 
                 <Space
                     android:layout_width="wrap_content"
@@ -149,7 +149,7 @@
                     android:layout_marginLeft="10dp"
                     android:background="@android:drawable/ic_menu_manage"
                     android:textAllCaps="false"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"/>
 
                 <Space
                     android:layout_width="wrap_content"

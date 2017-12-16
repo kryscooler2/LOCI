@@ -17,17 +17,9 @@ public class Station implements ResponseToRequest {
     private Double latitude;
     private Double longitude;
     private List<String> neighbors;
+    private List<String> subways;
 
     public Station(){}
-
-    public Station(Parcel in){
-        this.ids = in.readArrayList(List.class.getClassLoader());
-        this.name = in.readString();
-        this.description = in.readString();
-        this.latitude = in.readDouble();
-        this.longitude = in.readDouble();
-        this.neighbors = in.readArrayList(List.class.getClassLoader());
-    }
 
     public List<Long> getIds() {
         return ids;
@@ -83,28 +75,25 @@ public class Station implements ResponseToRequest {
         String description = jsonObject.getString(DESCRIPTION);
         Double latitude = jsonObject.getDouble(LATITUDE);
         Double longitude = jsonObject.getDouble(LONGITUDE);
-        //JSONArray test = jsonObject.getJSONArray(IDS);
         List<String> neighbors = new ArrayList<>();
-        JSONArray test = new JSONArray();
-        for (int i = 0; i < test.length(); i++) { // Walk through the Array.
-            JSONObject obj = test.getJSONObject(i);
-            JSONArray array = obj.getJSONArray(NEIGHBORS);
-            neighbors.add(array.toString());
-        }
-        List<Long> ids = new ArrayList<>();
-        JSONArray test2 = new JSONArray();
-        for (int j = 0; j < test.length(); j++) { // Walk through the Array.
-            JSONObject obj2 = test2.getJSONObject(j);
-            JSONArray array2 = obj2.getJSONArray(IDS);
-            ids.add(array2.getLong(j));
+        JSONArray jsonArray = jsonObject.getJSONArray(NEIGHBORS);
+        for (int i = 0; i < jsonArray.length(); i++) { // Walk through the Array
+            neighbors.add(jsonArray.get(i).toString());
         }
 
-        this.ids = ids;
+        List<String> subways = new ArrayList<>();
+        JSONArray jsonArray2 = jsonObject.getJSONArray(SUBWAYS);
+        for (int i = 0; i < jsonArray2.length(); i++) { // Walk through the Array
+            subways.add(jsonArray2.get(i).toString());
+        }
+
         this.name = name;
         this.description = description;
         this.latitude = latitude;
         this.longitude = longitude;
         this.neighbors = neighbors;
+        this.subways = subways;
+
     }
 
     @Override
@@ -115,5 +104,14 @@ public class Station implements ResponseToRequest {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
 
+    }
+
+    @Override
+    public List<String> getSubways() {
+        return subways;
+    }
+
+    public void setSubways(List<String> subways) {
+        this.subways = subways;
     }
 }

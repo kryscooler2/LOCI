@@ -95,7 +95,12 @@ public class NetworkService {
 			nameSubway.put(subway.getName(), subway);
 			subways.add(subway);
 			if(stations.isEmpty()) {
-				stations.addAll(listStopsBySubway);
+				for(Station s : subway.getStops()) {
+					if(s.getSubways().isEmpty()) {
+						s.getSubways().add(str);
+						stations.add(s);
+					} 
+				}				
 			} else {
 				for(Station s : listStopsBySubway) {
 					if(stations.contains(getStationByName(s.getName()))) {
@@ -104,6 +109,10 @@ public class NetworkService {
 					else {
 						stations.add(s);
 					}
+					
+					if(s.getSubways().isEmpty() || !s.getSubways().contains(str)) {
+						getStationByName(s.getName()).getSubways().add(str);
+					} 
 				}
 			}
 		}

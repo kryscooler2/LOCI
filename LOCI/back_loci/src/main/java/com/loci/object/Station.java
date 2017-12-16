@@ -20,8 +20,11 @@ public class Station implements Serializable {
 	
 	public List<String> neighbors;
 	
+	private List<String> subways;
+	
 	public Station() {
 		neighbors = new ArrayList<String>();
+		subways = new ArrayList<String>();
 	}
 
 	public List<Long> getIds() {
@@ -71,6 +74,14 @@ public class Station implements Serializable {
 
 	public void setNeighbors(List<String> neighbors) {
 		this.neighbors = neighbors;
+	}
+
+	public List<String> getSubways() {
+		return subways;
+	}
+
+	public void setSubways(List<String> subways) {
+		this.subways = subways;
 	}
 }
 

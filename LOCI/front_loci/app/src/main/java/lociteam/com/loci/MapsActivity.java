@@ -27,7 +27,7 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
-        gMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+        //gMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
         marker = gMap.addMarker(new MarkerOptions().title("Vous êtes ici").position(new LatLng(0, 0)));
     }
 

@@ -35,7 +35,7 @@ import android.support.v7.app.AlertDialog;
 
 
 public class Search extends AppCompatActivity {
-    private final String URL_BASE = "http://192.168.1.12:8081/subway/SP/";    //"http://172.16.232.91:8081/subway/SP/";
+    private final String URL_BASE = "http://172.16.232.91:8081/subway/SP/";    //"http://172.16.232.91:8081/subway/SP/";
 
     private final String TYPES_OF_RESOURCE_EXTRA = "TYPES_OF_RESOURCE";
     private final String RESPONSE_EXTRA = "RESPONSE";
@@ -252,8 +252,6 @@ public class Search extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-				Intent intenterror = new Intent(getApplicationContext(), MainMenuServerError.class);
-                startActivity(intenterror);
                 AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext())
                         .setTitle("Error while fetching data")
                         .setMessage("Something wrong happened while trying to get data from the web service.\n" +
