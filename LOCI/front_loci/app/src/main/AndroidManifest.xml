@@ -23,6 +23,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyANS_zt0teTfjPBBJqC8YG_89zX2ht5HN0" />
 
+
         <activity android:name=".MainMenu">
             <intent-filter>
 
