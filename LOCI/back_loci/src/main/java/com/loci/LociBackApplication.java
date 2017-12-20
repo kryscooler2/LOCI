@@ -25,6 +25,5 @@ public class LociBackApplication {
 	public static void main(String[] args) throws IOException {
 		SpringApplication.run(LociBackApplication.class, args);
 		networkService.createAllTheNetwork(tab, isWeightedGraph);
-
 	}
 }

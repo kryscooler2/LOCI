@@ -44,7 +44,7 @@ public class Search extends AppCompatActivity {
     private Button searchButton = null;
     private AutoCompleteTextView departureStation= null;
     private AutoCompleteTextView arrivalStation =null;
-        //test to call service;
+    //test to call service;
     private Button btnCall=null;
     private Button btnGMap=null;
 
@@ -151,6 +151,16 @@ public class Search extends AppCompatActivity {
             }
         });
 
+        //Paris maps;
+        btnGMap=(Button)findViewById(R.id.btnMapParis);
+        btnGMap.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View viewGoogle){
+                Intent mapScreen=new Intent(getApplicationContext(), MapsActivity.class);
+                startActivity(mapScreen);
+            }
+        });
+
         //on rajoute un listener sur le clic du boutton search
         searchButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -192,15 +202,6 @@ public class Search extends AppCompatActivity {
                 }
 
 
-            }
-        });
-        //test Google maps
-        btnGMap=(Button)findViewById(R.id.btnGoogleMap);
-        btnGMap.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View viewGoogle){
-                Intent googleMapScreen=new Intent(getApplicationContext(),MapsActivity.class);
-                startActivity(googleMapScreen);
             }
         });
      }

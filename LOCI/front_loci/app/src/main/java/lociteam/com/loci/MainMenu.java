@@ -19,7 +19,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 
 public class MainMenu extends AppCompatActivity {
-    private final String URL_BASE = "http://172.16.232.91:8081/subway/stations/";
+    private final String URL_BASE = "http://172.16.234.210:8090/subway/stations/";
     private final String TYPES_OF_RESOURCE_EXTRA = "TYPES_OF_RESOURCE";
     private final String RESPONSE_EXTRA = "RESPONSE";
     private Button nextStep = null;
