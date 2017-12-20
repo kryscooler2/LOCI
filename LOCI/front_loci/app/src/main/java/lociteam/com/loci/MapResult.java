@@ -104,7 +104,13 @@ public class MapResult extends AppCompatActivity  {
 
                 Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");
-                String shareBodyText = "Check it out. Your message goes here";
+                String shareBodyText = "Check it out. Your path goes here\n";
+                shareBodyText += "\n ***Departure***";
+                for(String station : stations) {
+                    shareBodyText += "\n" + "|-" + station + "\n";
+                    shareBodyText = shareBodyText.substring(0, shareBodyText.length()-1);
+                }
+                shareBodyText += "\n ***Arrival*** \n";
                 sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT,"Subject here");
                 sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBodyText);
                 startActivity(Intent.createChooser(sharingIntent, "Sharing Option"));
